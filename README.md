@@ -20,13 +20,10 @@ A simple RESTful API built with Flask and Supabase PostgreSQL (with fallback to 
 │   ├── config.py                 
 │   ├── models.py                 
 │   └── routes.py                 
-│
 ├── migrations/
 │   └── ... (generated after `flask db init`)
-│
-├── static/                        
+|── static/                        
 │   └── swagger.yaml               
-|
 ├── run.py                         
 ├── seed.py                        
 ├── setup.bat                      
