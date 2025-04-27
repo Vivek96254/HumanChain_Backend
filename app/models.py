@@ -1,27 +1,3 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from .config import Config
-
-# Initialize extensions (but don't bind them yet)
-db = SQLAlchemy()
-migrate = Migrate()
-
-def create_app():
-    app = Flask(__name__)
-    app.config.from_object(Config)
-
-    # Bind extensions to app
-    db.init_app(app)
-    migrate.init_app(app, db)
-
-    # Register routes
-    from app.routes import incident_bp
-    app.register_blueprint(incident_bp)
-
-    return app
-
-# models.py
 from datetime import datetime
 from . import db
 

@@ -7,6 +7,10 @@ incident_bp = Blueprint('incidents', __name__)
 
 VALID_SEVERITIES = {"Low", "Medium", "High"}
 
+@incident_bp.route('/')
+def index():
+    return "<h1>Welcome to the Incident Log API </h1><p>Visit <a href='/docs'>Swagger Docs</a> to explore the API.</p>"
+
 @incident_bp.route('/incidents', methods=['GET'])
 def get_incidents():
     incidents = Incident.query.all()

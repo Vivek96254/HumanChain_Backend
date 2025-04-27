@@ -13,6 +13,7 @@ A simple RESTful API built with Flask and Supabase PostgreSQL (with fallback to 
 - **API Documentation:** Swagger UI (via flask-swagger-ui)
 
 ---
+
 ## 📦 Installation
 
 ### 1. Clone the Repository
