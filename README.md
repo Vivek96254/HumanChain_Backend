@@ -15,24 +15,26 @@ A simple RESTful API built with Flask and Supabase PostgreSQL (with fallback to 
 ---
 
 ## 📁 Project Structure
-├── app/                           
-│   ├── __init__.py                
-│   ├── config.py                 
-│   ├── models.py                 
-│   └── routes.py                 
 
-├── migrations/
-│   └── ... (generated after `flask db init`)
-
-|── static/                        
-│   └── swagger.yaml               
-
-├── run.py                         
-├── seed.py                        
-├── setup.bat                      
-├── requirements.txt               
-├── README.md                      
-└── .gitignore                    
+├── app/                           # Main Flask app (blueprints, models, routes)
+│   ├── __init__.py                # Initialization file for the app
+│   ├── config.py                  # Configuration file (e.g., for database settings)
+│   ├── models.py                  # Database models
+│   └── routes.py                  # Routes for API/endpoints
+│
+├── migrations/                    # Database migration scripts (generated after `flask db init`)
+│   └── ...                         # Auto-generated migration files
+│
+├── static/                         # Static files (e.g., Swagger UI configuration)
+│   └── swagger.yaml                # Swagger API documentation file
+│
+├── run.py                          # Entry point to run the Flask server
+├── seed.py                         # Script to populate sample incidents
+├── setup.bat                       # Windows setup script (migrate + seed + run)
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+└── .gitignore                      # Files and folders to ignore in Git
+                   
 
 ---
 
