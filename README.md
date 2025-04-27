@@ -18,8 +18,8 @@ A simple RESTful API built with Flask and PostgreSQL (with fallback to SQLite) t
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/incident-log-api.git
-cd incident-log-api
+git clone https://github.com/Vivek96254/SparkleHood_Task.git
+cd SparkleHood_Task
 ```
 
 ### 2. Create Virtual Environment & Install Dependencies
