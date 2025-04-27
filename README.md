@@ -13,31 +13,6 @@ A simple RESTful API built with Flask and Supabase PostgreSQL (with fallback to 
 - **API Documentation:** Swagger UI (via flask-swagger-ui)
 
 ---
-
-## 📁 Project Structure
-
-├── app/                           # Main Flask app (blueprints, models, routes)
-│   ├── __init__.py                # Initialization file for the app
-│   ├── config.py                  # Configuration file (e.g., for database settings)
-│   ├── models.py                  # Database models
-│   └── routes.py                  # Routes for API/endpoints
-│
-├── migrations/                    # Database migration scripts (generated after `flask db init`)
-│   └── ...                         # Auto-generated migration files
-│
-├── static/                         # Static files (e.g., Swagger UI configuration)
-│   └── swagger.yaml                # Swagger API documentation file
-│
-├── run.py                          # Entry point to run the Flask server
-├── seed.py                         # Script to populate sample incidents
-├── setup.bat                       # Windows setup script (migrate + seed + run)
-├── requirements.txt                # Python dependencies
-├── README.md                       # Project documentation
-└── .gitignore                      # Files and folders to ignore in Git
-                   
-
----
-
 ## 📦 Installation
 
 ### 1. Clone the Repository
