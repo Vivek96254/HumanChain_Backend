@@ -18,8 +18,8 @@ A simple RESTful API built with Flask and Supabase PostgreSQL (with fallback to 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Vivek96254/SparkleHood_Task.git
-cd SparkleHood_Task
+git clone https://github.com/Vivek96254/HumanChain_Backend.git
+cd HumanChain_Backend
 ```
 
 ### 2. Create Virtual Environment & Install Dependencies
