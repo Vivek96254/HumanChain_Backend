@@ -1,0 +1,136 @@
+openapi: 3.0.3
+info:
+  title: Incident Log API - HumanChain
+  version: 1.0.0
+  description: RESTful API for managing AI Safety Incidents
+
+servers:
+  - url: http://localhost:5000
+
+paths:
+  /incidents:
+    get:
+      summary: Get all incidents
+      responses:
+        '200':
+          description: List of all incidents
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Incident'
+
+    post:
+      summary: Create a new incident
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentInput'
+      responses:
+        '201':
+          description: Incident created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Incident'
+
+    delete:
+      summary: Delete all incidents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                confirm:
+                  type: string
+                  example: "yes"
+      responses:
+        '200':
+          description: All incidents deleted
+
+  /incidents/available-ids:
+    get:
+      summary: Get available incident IDs
+      responses:
+        '200':
+          description: List of available incident IDs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  available_ids:
+                    type: array
+                    items:
+                      type: integer
+
+  /incidents/{id}:
+    get:
+      summary: Get an incident by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Incident found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Incident'
+        '404':
+          description: Incident not found
+
+    delete:
+      summary: Delete an incident by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Incident deleted
+        '404':
+          description: Incident not found
+
+components:
+  schemas:
+    Incident:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        severity:
+          type: string
+          enum: [Low, Medium, High]
+        reported_at:
+          type: string
+          format: date-time
+
+    IncidentInput:
+      type: object
+      required:
+        - title
+        - description
+        - severity
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        severity:
+          type: string
+          enum: [Low, Medium, High]
