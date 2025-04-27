@@ -1,2 +1,5 @@
-#Exclude the environment variables
+instance/
+*.pyc
+__pycache__/
 .env
+incidents.db

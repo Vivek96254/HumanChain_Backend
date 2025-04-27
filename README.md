@@ -1,6 +1,6 @@
 # Incident Log API - HumanChain AI Safety Backend Assignment
 
-A simple RESTful API built with Flask and PostgreSQL (with fallback to SQLite) to manage and log AI safety incidents, created for the HumanChain Backend Intern Take-Home Assignment.
+A simple RESTful API built with Flask and Supabase PostgreSQL (with fallback to SQLite) to manage and log AI safety incidents, created for the HumanChain Backend Intern Take-Home Assignment.
 
 ---
 
@@ -11,6 +11,28 @@ A simple RESTful API built with Flask and PostgreSQL (with fallback to SQLite) t
 - **ORM:** SQLAlchemy
 - **Migrations:** Flask-Migrate
 - **API Documentation:** Swagger UI (via flask-swagger-ui)
+
+---
+
+## 📁 Project Structure
+├── app/                           
+│   ├── __init__.py                
+│   ├── config.py                 
+│   ├── models.py                 
+│   └── routes.py                 
+│
+├── migrations/
+│   └── ... (generated after `flask db init`)
+│
+├── static/                        
+│   └── swagger.yaml               
+|
+├── run.py                         
+├── seed.py                        
+├── setup.bat                      
+├── requirements.txt               
+├── README.md                      
+└── .gitignore                    
 
 ---
 
@@ -33,6 +55,9 @@ pip install -r requirements.txt
 ```
 
 ### 3. Environment Variables
+To use Supabase db, create a new poject on the website and click connect. You will see the option to copy the url.
+Copy the URL from there and paste it in the env file.
+
 Create a `.env` file in the root directory:
 ```env
 DATABASE_URL=postgresql://youruser:yourpassword@yourhost:5432/yourdb
